@@ -14,7 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // --- Configuration ---
   const FLUTTERWAVE_PUBLIC_KEY = "FLWPUBK_TEST-048e59700701a459a784e8eca4658065-X";
   const DISCOUNT_AMOUNT = 1500;
-  const LOGIN_PORTAL_URL = "https://yourforexacademy.com/login.html";
+  // This is the base URL of your academy where users will eventually log in
+  const ACADEMY_WEBSITE_URL = "https://muaishaq.github.io/MFA"; 
+
   // Function to check if the discount is currently active
   function isDiscountActive() {
     const countdownTimerSpan = document.getElementById("countdownTimer");
@@ -56,71 +58,63 @@ document.addEventListener("DOMContentLoaded", function () {
     const selectedCourse = courseSelect.value;
     const state = stateInput.value; // Get value from the state input
     const town = townInput.value; // Get value from the town input
-
     let amount = getCoursePrice(selectedCourse);
 
     // Apply discount logic
     if (amount > 0 && isDiscountActive()) {
       amount -= DISCOUNT_AMOUNT;
-      if (amount < 0) amount = 0; // Ensure amount doesn't go negative
-    }
-
-    // Prevent checkout if amount is zero or negative after calculation
-    if (amount <= 0) {
-      alert(
-        "Please select a valid course or the calculated amount is zero/negative."
-      );
-      return;
+      if (amount < 0) amount = 0;
     }
 
     // Generate a unique transaction reference
-    // Using Date.now() + random string ensures high uniqueness
-    const tx_ref =
-      "Muaishaq_" + Date.now() + Math.random().toString(36).substring(2, 15);
+    const txRef = `MFA_TX_${Date.now()}_${Math.floor(Math.random() * 1000)}`;
 
     FlutterwaveCheckout({
       public_key: FLUTTERWAVE_PUBLIC_KEY,
-      tx_ref: tx_ref,
+      tx_ref: txRef,
       amount: amount,
-      currency: "NGN", // Ensure this matches your expected currency
-      payment_options: "card,mobilemoney,ussd",
+      currency: "NGN", // Assuming NGN, update if needed
+      country: "NG", // Assuming Nigeria, update if needed
+      payment_options: "card, mobilemoney, ussd", // Customize payment options
       customer: {
         email: email,
         phone_number: phone,
         name: fullName,
       },
-      // IMPORTANT: Pass any custom data here so Apps Script can retrieve it
-      // from webhook/verification metadata (verificationResult.data.meta in Apps Script)
       meta: {
-        // These keys should match what you expect in Apps Script's verificationResult.data.meta
+        course: selectedCourse,
         state: state,
         town: town,
-        course: selectedCourse,
-        // You can add other useful info here, e.g., the original amount, discount applied etc.
-        original_amount: getCoursePrice(selectedCourse), // Original amount before discount
-        discount_applied: isDiscountActive() ? DISCOUNT_AMOUNT : 0, // Indicate if discount was applied
       },
       customizations: {
-        title: "Muaishaq Forex Academy Registration",
+        title: "Muaishaq Forex Academy",
         description: `Payment for ${selectedCourse} Course`,
-        // Make sure this logo URL is correct and publicly accessible
-        logo: "https://yourforexacademy.com/ASSETS/images/your-logo.png",
+        logo: "https://yourforexacademy.com/logo.png", // Replace with your actual logo URL
       },
       callback: function (response) {
-        // This callback is from Flutterwave, indicating their UI is done.
-        //now primarily rely on Flutterwave's webhook for backend logging/email.
-        if (response.status === "successful") {
+        console.log("Payment response:", response); // Log response for debugging
+
+        if (
+          response.status === "successful" &&
+          response.tx_ref &&
+          response.transaction_id
+        ) {
+          // Payment was successful on Flutterwave's side.
+          // The Apps Script webhook will handle the backend processing (sheet logging, initial email).
+
+          // Display success message to the user, instructing them to check email
           alert(
-            "✅ Payment successful! You will receive an email shortly. Redirecting to your login portal..."
+            `Payment of ${response.currency} ${response.amount} for the ${selectedCourse} Course was successful! Your account has been activated, and login instructions (including password setup) will be sent to your email (${email}) in a separate email shortly. Please check your inbox (and spam folder).`
           );
-          registrationForm.reset(); // Clear the form after successful initiation
-          // Redirect the user immediately. The Apps Script (via webhook) will handle logging and email.
-          window.location.href = LOGIN_PORTAL_URL; // Redirect to your login page/dashboard
+
+          // NO REDIRECTION: The user should now wait for the email with login details.
+          // window.location.href = LOGIN_PORTAL_URL; // Removed as per new requirement
+
+        } else if (response.status === "cancelled") {
+          alert("Payment was cancelled. Please try again.");
         } else {
-          // Payment was not successful or failed.
-          alert("❌ Payment Failed! Please try again or contact support.");
+          alert("Payment failed or was not successful. Please try again.");
         }
-        console.log("Flutterwave Checkout Callback Response:", response); // Log response for debugging
       },
       onclose: function () {
         // User closed the payment modal
@@ -132,8 +126,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // --- Email Matching Validation  ---
   const emailMatchError = document.getElementById("emailMatchError");
 
-  // If you want to put these event listeners inside DOMContentLoaded for consistency
-  // (assuming email and confirmEmail inputs are also available)
   const emailInputForValidation = document.getElementById("email");
   const confirmEmailInput = document.getElementById("confirmEmail");
 
