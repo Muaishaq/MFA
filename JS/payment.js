@@ -106,19 +106,19 @@ document.addEventListener("DOMContentLoaded", function () {
           alert(
             `Payment of ${response.currency} ${response.amount} for the ${selectedCourse} Course was successful! Your account has been activated, and login instructions (including password setup) will be sent to your email (${email}) in a separate email shortly. Please check your inbox (and spam folder).`
           );
-
-          // NO REDIRECTION: The user should now wait for the email with login details.
-          // window.location.href = LOGIN_PORTAL_URL; // Removed as per new requirement
-
+          
         } else if (response.status === "cancelled") {
           alert("Payment was cancelled. Please try again.");
         } else {
           alert("Payment failed or was not successful. Please try again.");
         }
+        // Always reset the form after the payment interaction is complete
+        registrationForm.reset(); // <--- ADDED THIS LINE
       },
       onclose: function () {
         // User closed the payment modal
         console.log("Flutterwave payment modal closed by user.");
+        registrationForm.reset(); // <--- ADDED THIS LINE
       },
     });
   });
