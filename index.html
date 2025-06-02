@@ -220,7 +220,8 @@
             </select>
           </div>
 
-          <button type="submit">Register</button>
+          <button type="submit" id="submitForVerification">Register</button>
+          <div id="statusMessage" style="margin-top: 20px; font-weight: bold;"></div>
         </form>
       </div>
     </section>
@@ -297,8 +298,7 @@
             const headerOffset = document.querySelector(".navbar").offsetHeight;
             const elementPosition =
               targetElement.getBoundingClientRect().top + window.pageYOffset;
-            const offsetPosition = elementPosition - headerOffset - 20; // Added extra 20px padding
-
+            const offsetPosition = elementPosition - headerOffset - 20; 
             window.scrollTo({
               top: offsetPosition,
               behavior: "smooth",

@@ -85,7 +85,7 @@ p {
   ); /* Lighter background for navbar */
   padding: 1rem 0;
   box-shadow: var(--shadow-light);
-  position: sticky; /*navbar stick to the top */
+  position: sticky; 
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid var(--border-color); /* Subtle border */
@@ -169,8 +169,8 @@ p {
   cursor: pointer;
   color: var(--text-color-dark);
   padding: 0;
-  width: 30px; /* Set a fixed width for hamburger */
-  height: 20px; /* Set a fixed height for hamburger */
+  width: 30px; 
+  height: 20px;
   position: relative;
 }
 
@@ -649,7 +649,7 @@ button[type="submit"]:hover {
 .footer-social .social-icon:hover {
   transform: translateY(-3px);
   filter: invert(10%) sepia(90%) saturate(7000%) hue-rotate(330deg)
-    brightness(90%) contrast(100%); /* Example: make them more red on hover */
+    brightness(90%) contrast(100%);
 }
 
 .footer-bottom {
@@ -884,7 +884,7 @@ button[type="submit"]:hover {
   ); /* Lighter background for the card */
   padding: 40px;
   border-radius: 15px;
-  box-shadow: var(--shadow-medium); /* Use your existing shadow variable */
+  box-shadow: var(--shadow-medium); 
   text-align: center;
   border: 1px solid var(--border-color); /* Subtle border */
 }
@@ -917,7 +917,6 @@ button[type="submit"]:hover {
   margin-bottom: 20px; 
 }
 
-/* Reusing your input/select styles */
 .login-form input[type="email"],
 .login-form input[type="password"] {
   width: calc(100% - 24px); /* Adjust padding for 12px on each side */
@@ -970,7 +969,7 @@ button[type="submit"]:hover {
   text-decoration: underline;
 }
 
-/* General Button style based on your registration button */
+/* General Button style based on registration button */
 .btn-primary {
   width: 100%;
   padding: 15px 0;

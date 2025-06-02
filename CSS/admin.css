@@ -1,21 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,700&display=swap");
 
-/* CSS Variables */
 :root {
-  --bg-color-primary: #f2f2fc; /* Light background for sections */
-  --bg-color-secondary: #fdf9ff; /* Lighter background, e.g., navbar, cards */
-  --bg-color-tertiary: #e8dfec; /* Even lighter, subtle shades */
-  --text-color-dark: #302e4d; /* Dark text for headings/strong elements */
-  --text-color-light: #504e70; /* Lighter text for paragraphs */
-  --accent-color: #ec1839; /* Skin color/primary accent */
-  --accent-color-hover: #c4122e; /* Darker accent for hover states */
-  --border-color: #dcdcdc; /* General border color */
+  --bg-color-primary: #f2f2fc;
+  --bg-color-secondary: #fdf9ff;
+  --bg-color-tertiary: #e8dfec;
+  --text-color-dark: #302e4d;
+  --text-color-light: #504e70;
+  --accent-color: #ec1839;
+  --accent-color-hover: #c4122e;
+  --border-color: #dcdcdc;
   --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.08);
   --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.1);
-  --accent-color-rgb: 236, 24, 57; /* For rgba usage in shadows */
+  --accent-color-rgb: 236, 24, 57;
 }
 
-/* Dark Mode Variables */
 body.dark {
   --bg-color-primary: #151515;
   --bg-color-secondary: #222222;
@@ -331,17 +329,17 @@ body.dark {
 .activity-list {
     margin-top: 1.5rem;
     border-radius: 8px;
-    overflow: hidden; /* For consistent background */
-    background-color: var(--bg-color-primary); /* A slightly different background for the list itself */
-    box-shadow: inset 0 0 5px rgba(0,0,0,0.05); /* Subtle inner shadow */
+    overflow: hidden;
+    background-color: var(--bg-color-primary);
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
 }
 
 .activity-item {
-    padding: 1rem 1.5rem; /* More generous padding */
-    border-bottom: 1px solid var(--border-color); /* Clearer separators */
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Vertically align items */
+    align-items: center;
     gap: 15px;
     font-size: 0.95rem;
     color: var(--text-color-light);
@@ -353,14 +351,14 @@ body.dark {
 }
 
 .activity-item:hover {
-    background-color: var(--bg-color-tertiary); /* Highlight on hover */
+    background-color: var(--bg-color-tertiary);
 }
 
 .activity-time {
-    font-weight: 600; /* Bolder time */
+    font-weight: 600;
     color: var(--accent-color);
     flex-shrink: 0;
-    width: 90px; /* Consistent width */
+    width: 90px;
     text-align: right;
 }
 
@@ -371,35 +369,35 @@ body.dark {
 }
 
 .activity-description .highlight {
-    font-weight: 700; /* Even bolder for highlights */
-    color: var(--accent-color); /* Using accent color for key details */
+    font-weight: 700;
+    color: var(--accent-color);
 }
 
 /* Tables for data display */
 .table-responsive {
     overflow-x: auto;
     margin-top: 1.5rem;
-    border-radius: 12px; /* Consistent border radius with widgets */
-    box-shadow: var(--shadow-light); /* Apply shadow to the table container */
-    border: 1px solid var(--border-color); /* Border to the table container */
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    border: 1px solid var(--border-color);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    background-color: var(--bg-color-secondary); /* Table background color */
-    border-radius: 12px; /* Apply to table too */
-    overflow: hidden; /* Ensures border-radius applies */
+    background-color: var(--bg-color-secondary);
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 table thead {
-    background-color: var(--bg-color-tertiary); /* Header row background */
+    background-color: var(--bg-color-tertiary);
 }
 
 table th {
-    padding: 1.2rem 1.5rem; /* More padding */
+    padding: 1.2rem 1.5rem;
     text-align: left;
-    font-weight: 700; /* Bolder headings */
+    font-weight: 700;
     font-size: 0.9rem;
     color: var(--text-color-dark);
     text-transform: uppercase;
@@ -407,11 +405,11 @@ table th {
 }
 
 table td {
-    padding: 1rem 1.5rem; /* More padding */
+    padding: 1rem 1.5rem;
     border-bottom: 1px solid var(--border-color);
     color: var(--text-color-light);
     font-size: 0.95rem;
-    vertical-align: middle; /* Align content nicely */
+    vertical-align: middle;
 }
 
 table tbody tr:last-child td {
@@ -419,36 +417,36 @@ table tbody tr:last-child td {
 }
 
 table tbody tr:hover {
-    background-color: var(--bg-color-tertiary); /* Subtle hover effect */
+    background-color: var(--bg-color-tertiary);
 }
 
 /* Status Badges */
 .status-badge {
-    display: inline-flex; /* Use flex for centering if content is icon+text */
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.4em 1em; /* More padding */
-    border-radius: 25px; /* More rounded */
+    padding: 0.4em 1em;
+    border-radius: 25px;
     font-size: 0.8rem;
-    font-weight: 700; /* Bolder */
+    font-weight: 700;
     text-transform: uppercase;
     color: white;
-    min-width: 70px; /* Ensure a minimum width for consistency */
+    min-width: 70px;
     text-align: center;
-    white-space: nowrap; /* Prevent text wrapping */
+    white-space: nowrap;
 }
 
 .status-badge.active {
-    background-color: #28a745; /* Green */
+    background-color: #28a745;
 }
 
 .status-badge.draft {
-    background-color: #ffc107; /* Yellow/Orange */
+    background-color: #ffc107;
     color: var(--text-color-dark);
 }
 
 .status-badge.inactive {
-    background-color: #dc3545; /* Red */
+    background-color: #dc3545;
 }
 
 /* Action Buttons within tables */
@@ -466,10 +464,10 @@ table tbody tr:hover {
     color: var(--accent-color);
 }
 .action-icon-btn.edit-icon:hover {
-    color: #007bff; /* Blue for edit */
+    color: #007bff;
 }
 .action-icon-btn.delete-icon:hover {
-    color: #dc3545; /* Red for delete */
+    color: #dc3545;
 }
 
 /* Course Level Management */
@@ -506,7 +504,7 @@ table tbody tr:hover {
     font-size: 0.95rem;
     color: var(--text-color-light);
     margin-bottom: 1.5rem;
-    min-height: 45px; /* Ensure consistent height for description */
+    min-height: 45px;
 }
 
 .level-card .btn-sm {
@@ -564,15 +562,15 @@ table tbody tr:hover {
     height: 6px;
     border-radius: 3px;
     overflow: hidden;
-    width: 60px; /* Small width for table cell */
-    display: inline-block; /* Align with text */
+    width: 60px;
+    display: inline-block;
     vertical-align: middle;
     margin-right: 5px;
 }
 
 .progress-bar-admin-sm div {
     height: 100%;
-    background-color: #28a745; /* Green progress */
+    background-color: #28a745;
     border-radius: 3px;
 }
 
@@ -595,7 +593,7 @@ table tbody tr:hover {
     }
 
     .menu-toggle-dashboard {
-        display: block; /* Show hamburger icon for dashboard */
+        display: block;
         background: none;
         border: none;
         font-size: 1.8rem;
@@ -610,7 +608,7 @@ table tbody tr:hover {
     }
 
     .header-right {
-        display: none; /* Can be toggled or re-arranged for mobile */
+        display: none;
     }
 
     .dashboard-widgets {
@@ -632,7 +630,7 @@ table tbody tr:hover {
         text-align: left;
     }
     .user-item-compact {
-        flex-wrap: wrap; /* Allow wrapping on small screens */
+        flex-wrap: wrap;
         justify-content: space-between;
     }
     .user-item-compact .user-thumb,
@@ -642,11 +640,11 @@ table tbody tr:hover {
         flex-shrink: 0;
     }
     .user-item-compact span {
-        flex-grow: 1; /* Allow name to grow */
+        flex-grow: 1;
     }
 
     .level-management-grid {
-        grid-template-columns: 1fr; /* Single column on small screens */
+        grid-template-columns: 1fr;
     }
 
     .session-management-actions,
@@ -674,7 +672,7 @@ table tbody tr:hover {
 .form-group label {
     display: block;
     margin-bottom: 5px;
-    font-weight: 600; /* Bolder labels */
+    font-weight: 600;
     color: var(--text-color-dark);
 }
 
@@ -686,8 +684,8 @@ table tbody tr:hover {
     width: 100%;
     padding: 10px 12px;
     border: 1px solid var(--border-color);
-    border-radius: 8px; /* Consistent with other elements */
-    background-color: var(--bg-color-primary); /* Use primary bg for input fields */
+    border-radius: 8px;
+    background-color: var(--bg-color-primary);
     color: var(--text-color-dark);
     font-size: 1rem;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -704,7 +702,7 @@ table tbody tr:hover {
 }
 
 .form-group textarea {
-    resize: vertical; /* Allow vertical resizing */
+    resize: vertical;
     min-height: 80px;
 }
 
@@ -712,8 +710,8 @@ table tbody tr:hover {
 /* The inline styles in HTML were temporary; these override them for consistency */
 #create-assignment-form .btn-action,
 #issue-certificate-form .btn-action {
-    margin-top: 0; /* Adjust margin if needed, depends on surrounding elements */
-    background-color: var(--accent-color); /* Your primary action color */
+    margin-top: 0;
+    background-color: var(--accent-color);
 }
 
 #create-assignment-form .btn-action:hover,
@@ -724,9 +722,9 @@ table tbody tr:hover {
 #create-assignment-form .btn-outline,
 #issue-certificate-form .btn-outline {
     margin-top: 0;
-    margin-left: 10px; /* Space between buttons */
+    margin-left: 10px;
     background-color: transparent;
-    border: 2px solid var(--text-color-light); /* A more neutral outline for cancel */
+    border: 2px solid var(--text-color-light);
     color: var(--text-color-light);
 }
 
@@ -744,42 +742,42 @@ table tbody tr:hover {
     gap: 1rem;
     margin-top: 1rem;
     margin-bottom: 2rem;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    flex-wrap: wrap;
 }
 
 /* Styles for view/revoke icons in certificate management */
 .action-icon-btn.view-icon:hover {
-    color: #17a2b8; /* Info blue */
+    color: #17a2b8;
 }
 .action-icon-btn.revoke-icon:hover {
-    color: #dc3545; /* Danger red */
+    color: #dc3545;
 }
 .action-icon-btn.view-submissions-icon:hover {
-    color: #6f42c1; /* Purple for submissions */
+    color: #6f42c1;
 }
 
 /* Responsive adjustments for new sections */
 @media (max-width: 768px) {
     #create-assignment-form form,
     #issue-certificate-form form {
-        padding: 15px; /* Adjust padding for smaller screens */
+        padding: 15px;
     }
 
     .assignment-management-actions,
     .certificate-actions {
-        flex-direction: column; /* Stack buttons vertically */
+        flex-direction: column;
         gap: 0.8rem;
     }
 
     .assignment-management-actions .btn-action,
     .certificate-actions .btn-action {
-        width: 100%; /* Make buttons full width */
-        justify-content: center; /* Center text and icon */
+        width: 100%;
+        justify-content: center;
     }
 
     #create-assignment-form .btn-outline,
     #issue-certificate-form .btn-outline {
-        margin-left: 0; /* Remove left margin for stacking */
-        margin-top: 10px; /* Add top margin between stacked buttons */
+        margin-left: 0;
+        margin-top: 10px;
     }
 }
