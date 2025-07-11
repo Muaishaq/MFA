@@ -1,0 +1,862 @@
+@import url("https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,700&display=swap");
+
+/* CSS Variables */
+:root {
+  --bg-color-primary: #f2f2fc; /* Light background for sections */
+  --bg-color-secondary: #fdf9ff; /* Lighter background, e.g., navbar, cards */
+  --bg-color-tertiary: #e8dfec; /* Even lighter, subtle shades */
+  --text-color-dark: #302e4d; /* Dark text for headings/strong elements */
+  --text-color-light: #504e70; /* Lighter text for paragraphs */
+  --accent-color: #ec1839; /* Skin color/primary accent */
+  --accent-color-hover: #c4122e; /* Darker accent for hover states */
+  --border-color: #dcdcdc; /* General border color */
+  --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.1);
+  --accent-color-rgb: 236, 24, 57; /* For rgba usage in shadows */
+}
+
+/* Dark Mode Variables */
+body.dark {
+  --bg-color-primary: #151515;
+  --bg-color-secondary: #222222;
+  --bg-color-tertiary: #393939;
+  --text-color-dark: #ffffff;
+  --text-color-light: #e0e0e0;
+  --border-color: #4a4a4a;
+  --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.3);
+  --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Dashboard Specific Styles */
+
+
+/* General Dashboard Wrapper */
+.dashboard-body {
+    background-color: var(--bg-color-primary); /* Uses your primary background */
+    display: flex; /* Use flexbox for overall layout */
+    min-height: 100vh; /* Ensure it takes full viewport height */
+    overflow-x: hidden; /* Prevent horizontal scroll on small screens */
+}
+
+.dashboard-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+/* dashboard logo image */
+.dashboard-logo {
+    height: 8rem; 
+    width: auto;
+    vertical-align: middle;
+}
+.dashboard-brand {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px; /* Fixed width for desktop */
+    background-color: var(--bg-color-secondary); 
+    box-shadow: var(--shadow-light); 
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 0;
+    position: sticky; /* Make sidebar sticky */
+    top: 0;
+    height: 100vh; /* Full height */
+    transition: transform 0.3s ease-in-out; /* For mobile slide-in/out */
+    z-index: 1000;
+}
+
+.sidebar-header {
+    padding: 0 1.5rem 1.5rem;
+    border-bottom: 1px solid var(--border-color); 
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.dashboard-brand {
+    font-family: "Clicker Script", cursive; 
+    font-size: 2.2rem; /* Slightly smaller than main navbar brand */
+    color: var(--accent-color); 
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+.dashboard-brand:hover {
+    color: var(--accent-color-hover); 
+}
+
+.sidebar-nav {
+    flex-grow: 1; /* Allows nav to take available space */
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-nav .nav-item {
+    display: flex; /* For icon and text alignment */
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+    color: var(--text-color-light); 
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.05rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-left: 4px solid transparent; /* For active indicator */
+}
+
+.sidebar-nav .nav-item .icon {
+    margin-right: 12px;
+    font-size: 1.2rem;
+    color: var(--text-color-light);
+    transition: color 0.3s ease;
+}
+
+.sidebar-nav .nav-item:hover {
+    background-color: var(--bg-color-tertiary); 
+    color: var(--text-color-dark);
+}
+
+.sidebar-nav .nav-item:hover .icon {
+    color: var(--accent-color);
+}
+
+.sidebar-nav .nav-item.active {
+    background-color: rgba(var(--accent-color-rgb), 0.1);
+    color: var(--accent-color); 
+    border-left-color: var(--accent-color);
+}
+
+.sidebar-nav .nav-item.active .icon {
+    color: var(--accent-color); 
+}
+
+.sidebar-footer {
+    padding: 1.5rem;
+    border-top: 1px solid var(--border-color); 
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color-dark);
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+    color: var(--accent-color); 
+    transform: rotate(15deg);
+}
+
+
+/* Main Content Area */
+.main-content {
+    flex-grow: 1; /* Takes remaining width */
+    padding: 1.5rem; /* Padding around the content */
+    background-color: var(--bg-color-primary); 
+}
+
+/* Dashboard Header */
+.dashboard-header {
+    background-color: var(--bg-color-secondary);
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-light); 
+    border: 1px solid var(--border-color); 
+}
+
+.header-left h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--text-color-dark);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.search-bar {
+    position: relative;
+}
+
+.search-bar input {
+    padding: 0.8rem 1.2rem;
+    padding-right: 40px; /* Space for icon */
+    border: 1px solid var(--border-color); 
+    border-radius: 25px;
+    background-color: var(--bg-color-primary); 
+    color: var(--text-color-dark); 
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar input:focus {
+    border-color: var(--accent-color); 
+    box-shadow: 0 0 0 3px rgba(var(--accent-color-rgb), 0.1); 
+    outline: none;
+}
+
+.search-bar i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-color-light);
+    font-size: 1.1rem;
+}
+
+.user-profile-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.user-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-color);
+    transition: transform 0.2s ease;
+}
+
+.user-avatar:hover {
+    transform: scale(1.05);
+}
+
+.user-name {
+    font-weight: 600;
+    color: var(--text-color-dark); 
+}
+
+/* Dashboard Widgets */
+.dashboard-widgets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Default for stats */
+    gap: 2rem;
+}
+
+.widget-row {
+    grid-column: 1 / -1; /* Spans full width */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-bottom: 1rem; /* Space between rows */
+}
+
+.widget {
+    background-color: var(--bg-color-secondary); 
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light); 
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.widget:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium); 
+}
+
+.widget h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color-dark); 
+}
+
+/* Stat Cards */
+.stat-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-card .icon-lg {
+    font-size: 3rem;
+    color: var(--accent-color); 
+    margin-bottom: 0.8rem;
+}
+
+.stat-card .stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color-dark); 
+    margin-top: 0.5rem;
+}
+
+/* Wide Widget (e.g., Continue Learning, Market Insights) */
+.wide-widget {
+    grid-column: 1 / -1; /* Spans across all columns */
+}
+
+.widget-description {
+    font-size: 0.95rem;
+    color: var(--text-color-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.level-description {
+    background-color: var(--bg-color-tertiary);
+    border-left: 5px solid var(--accent-color);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    color: var(--text-color-dark);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.level-description strong {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.course-progress-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.progress-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--bg-color-primary); 
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease;
+}
+
+.progress-card:hover {
+    transform: translateY(-3px);
+}
+
+.progress-card img {
+    width: 100px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.progress-details {
+    flex-grow: 1;
+}
+
+.progress-details h4 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    color: var(--text-color-dark); 
+}
+
+.progress-details p {
+    margin: 0 0 0.7rem;
+    font-size: 0.95rem;
+    color: var(--text-color-light); 
+}
+
+.progress-bar-container {
+    background-color: var(--bg-color-tertiary);
+    height: 8px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--accent-color); 
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+}
+
+.progress-text {
+    font-size: 0.9rem;
+    color: var(--text-color-dark); 
+    font-weight: 500;
+}
+
+/* Small button for "Continue" (resembling your existing button styles) */
+.btn-sm {
+    display: inline-block;
+    background-color: var(--accent-color); 
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap; /* Prevents text wrap */
+}
+
+.btn-sm:hover {
+    background-color: var(--accent-color-hover);
+    transform: translateY(-2px);
+}
+
+.btn-sm.disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.btn-sm .fas {
+    margin-right: 5px;
+}
+
+/* Online Class List */
+.online-class-list {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.class-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-color-primary);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.class-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-light);
+}
+
+.class-info h4 {
+    margin: 0 0 0.4rem;
+    color: var(--text-color-dark);
+    font-size: 1.1rem;
+}
+
+.class-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-color-light);
+}
+
+.class-info p .fas {
+    margin-right: 5px;
+    color: var(--accent-color);
+}
+
+.btn-join {
+    background-color: #28a745; /* Green for join */
+}
+
+.btn-join:hover {
+    background-color: #218838;
+}
+
+.btn-join.disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+
+/* Video Grid */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.video-card {
+    background-color: var(--bg-color-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.video-card img {
+    width: 100%;
+    height: 180px; /* Fixed height for consistency */
+    object-fit: cover;
+    display: block; /* Remove extra space below image */
+}
+
+.video-info {
+    padding: 1rem;
+}
+
+.video-info h4 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    color: var(--text-color-dark);
+}
+
+.video-info p {
+    margin: 0 0 1rem;
+    font-size: 0.85rem;
+    color: var(--text-color-light);
+}
+
+.btn-watch {
+    background-color: var(--accent-color);
+}
+
+.btn-watch:hover {
+    background-color: var(--accent-color-hover);
+}
+
+
+/* General Button Styles (Reused from your existing CSS) */
+.btn-text-link {
+    display: inline-block;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.btn-text-link:hover {
+    color: var(--accent-color-hover);
+    text-decoration: underline;
+}
+
+.btn-outline {
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 2rem;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-outline:hover {
+    background-color: var(--accent-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Trading Journal Stats (Existing) */
+.journal-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.journal-stats .stat-item {
+    background-color: var(--bg-color-primary);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.journal-stats .stat-item .label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-color-light);
+    margin-bottom: 0.4rem;
+}
+
+.journal-stats .stat-item .value {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-color-dark);
+}
+
+.journal-stats .stat-item .value.success {
+    color: #28a745;
+}
+.journal-stats .stat-item .value.danger {
+    color: #dc3545;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        position: fixed;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .menu-toggle-dashboard {
+        display: block; /* Show hamburger icon for dashboard */
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: var(--text-color-dark);
+        margin-right: 1rem;
+    }
+
+    .header-left {
+        display: flex;
+        align-items: center;
+    }
+
+    .header-right {
+        display: none; /* Hide search and user profile on small mobile by default */
+    }
+
+    .dashboard-widgets {
+        grid-template-columns: 1fr; /* Single column layout for all widgets */
+        gap: 1rem;
+    }
+    .widget-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .progress-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .progress-card img {
+        margin-bottom: 0.8rem;
+    }
+
+    .online-class-list .class-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr; /* Single column for videos on small screens */
+    }
+}
+
+@media (max-width: 480px) { 
+    .dashboard-header h2 {
+        font-size: 1.4rem;
+    }
+    .user-name {
+        display: none; /* Hide user name on very small screens */
+    }
+    .search-bar input {
+        width: 150px; /* Adjust search bar width */
+    }
+}
+
+/* --- NEW: My Assignments and My Certificates Styles (Student) --- */
+
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    border: 1px solid var(--border-color);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--bg-color-secondary);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+table thead {
+    background-color: var(--bg-color-tertiary);
+}
+
+table th {
+    padding: 1.2rem 1.5rem;
+    text-align: left;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text-color-dark);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border-color);
+}
+
+table td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color-light);
+    font-size: 0.95rem;
+    vertical-align: middle;
+}
+
+table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+table tbody tr:hover {
+    background-color: var(--bg-color-tertiary);
+}
+
+/* Status Badges for Assignments (reusing concepts from admin.css) */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4em 1em;
+    border-radius: 25px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+    min-width: 70px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.status-badge.pending {
+    background-color: #ffc107; /* Yellow/Orange */
+    color: var(--text-color-dark);
+}
+
+.status-badge.submitted {
+    background-color: #007bff; /* Blue */
+}
+
+.status-badge.graded {
+    background-color: #28a745; /* Green */
+}
+
+/* Certificate List */
+.certificate-list {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.certificate-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: var(--bg-color-primary);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.certificate-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-light);
+}
+
+.certificate-item .icon-lg {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.certificate-info {
+    flex-grow: 1;
+}
+
+.certificate-info h4 {
+    margin: 0 0 0.4rem;
+    font-size: 1.1rem;
+    color: var(--text-color-dark);
+}
+
+.certificate-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-color-light);
+}
+
+.certificate-item .btn-action {
+    background-color: #17a2b8; /* Info blue for download */
+    color: white;
+    padding: 0.6rem 1.2rem; /* Smaller button */
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.certificate-item .btn-action:hover {
+    background-color: #138496; /* Darker blue on hover */
+    transform: translateY(-2px);
+}
+
+.certificate-item.disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    background-color: var(--bg-color-tertiary);
+    border-color: var(--border-color);
+}
+
+.certificate-item.disabled .icon-lg {
+    color: var(--text-color-light);
+}
+
+.certificate-item.disabled .btn-outline {
+    background-color: #cccccc;
+    color: #666666;
+    border-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Responsive adjustments for student assignments/certificates */
+@media (max-width: 768px) {
+    .certificate-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .certificate-item .btn-action,
+    .certificate-item .btn-outline {
+        width: 100%;
+        justify-content: center;
+    }
+}
