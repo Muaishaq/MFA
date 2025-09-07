@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Muaishaq Forex Academy</title>
+    <link rel="icon" href="ASSETS/images/ChatGPT Image May 24, 2025, 10_52_34 AM.png" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/auth.css" />
+  </head>
+  <body class="login-body">
+    <main class="login-container">
+      <div class="login-card">
+        <img
+          src="ASSETS/images/ChatGPT Image May 24, 2025, 10_52_34 AM.png"
+          alt="Muaishaq Forex Academy Logo"
+          class="login-logo"
+        />
+        <h1 class="login-brand">Muaishaq Academy</h1>
+        <p class="login-tagline">Welcome back! Please login to your account.</p>
+
+        <form id="loginForm" class="login-form">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              autocomplete="current-password"
+            />
+          </div>
+
+          <div class="form-options">
+            <div class="remember-me">
+              <input type="checkbox" id="rememberMe" name="rememberMe" />
+              <label for="rememberMe">Remember Me</label>
+            </div>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+          </div>
+
+          <button type="submit" class="btn-primary">Login</button>
+        </form>
+
+        <div class="login-divider">
+          <span>OR</span>
+        </div>
+
+        <button type="button" class="btn-social google">
+          <i class="fab fa-google"></i> Login with Google
+        </button>
+        <p class="signup-link">
+          Don't have an account? <a href="index.html">Register here</a>
+        </p>
+      </div>
+    </main>
+
+    <script src="JS/login.js"></script>
+  </body>
+</html>

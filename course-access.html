@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forex Academy Dashboard</title>
+    <link rel="icon" href="ASSETS/images/ChatGPT Image May 24, 2025, 10_52_34 AM.png" type="image/png" />
+    <link rel="stylesheet" href="CSS/course-access.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body class="dashboard-body">
+    <div class="dashboard-wrapper">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <a href="#" class="dashboard-brand">
+            <img
+              src="ASSETS/images/ChatGPT Image May 24, 2025, 10_52_34 AM.png"
+              alt="FX Dashboard Logo"
+              class="dashboard-logo"
+            />
+          </a>
+        </div>
+        <nav class="sidebar-nav">
+          <ul>
+            <li>
+              <a href="#" class="nav-item active"
+                ><i class="fas fa-home icon"></i> Dashboard</a
+              >
+            </li>
+            <li>
+              <a href="#my-courses" class="nav-item"
+                ><i class="fas fa-book-open icon"></i> My Courses</a
+              >
+            </li>
+            <li>
+              <a href="#online-classes" class="nav-item"
+                ><i class="fas fa-video icon"></i> Online Classes</a
+              >
+            </li>
+            <li>
+              <a href="#video-library" class="nav-item"
+                ><i class="fas fa-play-circle icon"></i> Video Library</a
+              >
+            </li>
+            <li>
+              <a href="#my-assignments" class="nav-item"
+                ><i class="fas fa-tasks icon"></i> My Assignments</a
+              >
+            </li>
+            <li>
+              <a href="#my-certificates" class="nav-item"
+                ><i class="fas fa-award icon"></i> My Certificates</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-item"
+                ><i class="fas fa-chart-line icon"></i> Trading Journal</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-item"
+                ><i class="fas fa-user icon"></i> My Profile</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-item"
+                ><i class="fas fa-bell icon"></i> Notifications</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-item"
+                ><i class="fas fa-cogs icon"></i> Settings</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-item"
+                ><i class="fas fa-sign-out-alt icon"></i> Logout</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="sidebar-footer">
+          <button id="theme-toggle" class="theme-toggle-btn">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="dashboard-header">
+          <div class="header-left">
+            <button class="menu-toggle-dashboard">
+              <i class="fas fa-bars"></i>
+            </button>
+            <h2>Welcome, [User Name]!</h2>
+          </div>
+          <div class="header-right">
+            <div class="search-bar">
+              <input type="text" placeholder="Search courses, topics..." />
+              <i class="fas fa-search"></i>
+            </div>
+            <div class="user-profile-menu">
+              <img
+                src="https://via.placeholder.com/40"
+                alt="User Avatar"
+                class="user-avatar"
+              />
+              <span class="user-name">[User]</span>
+            </div>
+          </div>
+        </header>
+
+        <section class="dashboard-widgets container">
+          <div class="widget-row">
+            <div class="widget stat-card">
+              <i class="fas fa-graduation-cap icon-lg"></i>
+              <h3>Courses Enrolled</h3>
+              <p class="stat-value">5</p>
+            </div>
+            <div class="widget stat-card">
+              <i class="fas fa-percent icon-lg"></i>
+              <h3>Progress Made</h3>
+              <p class="stat-value">65%</p>
+            </div>
+            <div class="widget stat-card">
+              <i class="fas fa-trophy icon-lg"></i>
+              <h3>Certificates Earned</h3>
+              <p class="stat-value">2</p>
+            </div>
+            <div class="widget stat-card">
+              <i class="fas fa-calendar-alt icon-lg"></i>
+              <h3>Upcoming Lessons</h3>
+              <p class="stat-value">3</p>
+            </div>
+          </div>
+
+          <div class="widget wide-widget" id="my-courses">
+            <h3>My Learning Path: [Student's Level - e.g., Beginner]</h3>
+            <div class="level-description">
+              <p>
+                Welcome to your learning path! Here you'll find materials
+                tailored for your <strong>[Student's Level]</strong> journey.
+                These resources have been carefully selected by the academy to
+                guide your progress.
+              </p>
+              <p>
+                You currently have access to materials for the
+                <strong>[Student's Level]</strong> level.
+              </p>
+            </div>
+            <div class="course-progress-grid">
+              <div class="progress-card">
+                <img
+                  src="https://via.placeholder.com/100x70/222/FFF"
+                  alt="Course Image"
+                />
+                <div class="progress-details">
+                  <h4>Introduction to Candlesticks</h4>
+                  <p>Module 3: Advanced Patterns</p>
+                  <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 75%"></div>
+                  </div>
+                  <span class="progress-text">75% Complete</span>
+                  <a href="#" class="btn-sm">Continue</a>
+                </div>
+              </div>
+              <div class="progress-card">
+                <img
+                  src="https://via.placeholder.com/100x70/222/FFF"
+                  alt="Course Image"
+                />
+                <div class="progress-details">
+                  <h4>Risk Management Essentials</h4>
+                  <p>Module 1: Capital Protection</p>
+                  <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 20%"></div>
+                  </div>
+                  <span class="progress-text">20% Complete</span>
+                  <a href="#" class="btn-sm">Continue</a>
+                </div>
+              </div>
+              <div class="progress-card">
+                <img
+                  src="https://via.placeholder.com/100x70/222/FFF"
+                  alt="Course Image"
+                />
+                <div class="progress-details">
+                  <h4>Fundamental Analysis Basics</h4>
+                  <p>Module 5: Economic Indicators</p>
+                  <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 90%"></div>
+                  </div>
+                  <span class="progress-text">90% Complete</span>
+                  <a href="#" class="btn-sm">Review</a>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="btn-text-link"
+              >View All [Student's Level] Materials
+              <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+
+          <div class="widget wide-widget" id="online-classes">
+            <h3>Online Classes (Zoom Links)</h3>
+            <p class="widget-description">
+              Join your scheduled online classes here. New links will be posted
+              by the admin before each session.
+            </p>
+            <div class="online-class-list">
+              <div class="class-item">
+                <div class="class-info">
+                  <h4>Beginner Strategies Q&A Session</h4>
+                  <p>
+                    <i class="fas fa-calendar-alt"></i> Monday, May 27, 2025 |
+                    <i class="fas fa-clock"></i> 07:00 PM WAT
+                  </p>
+                </div>
+                <a href="[Zoom Link 1]" target="_blank" class="btn-sm btn-join"
+                  ><i class="fas fa-external-link-alt"></i> Join Class</a
+                >
+              </div>
+              <div class="class-item">
+                <div class="class-info">
+                  <h4>Intermediate Market Review</h4>
+                  <p>
+                    <i class="fas fa-calendar-alt"></i> Wednesday, May 29, 2025
+                    | <i class="fas fa-clock"></i> 08:00 PM WAT
+                  </p>
+                </div>
+                <a
+                  href="[Zoom Link 2]"
+                  target="_blank"
+                  class="btn-sm btn-join disabled"
+                  ><i class="fas fa-hourglass-start"></i> Link Soon</a
+                >
+              </div>
+              <div class="class-item">
+                <div class="class-info">
+                  <h4>Advanced Trade Execution Workshop</h4>
+                  <p>
+                    <i class="fas fa-calendar-alt"></i> Friday, May 31, 2025 |
+                    <i class="fas fa-clock"></i> 06:30 PM WAT
+                  </p>
+                </div>
+                <a
+                  href="[Zoom Link 3]"
+                  target="_blank"
+                  class="btn-sm btn-join disabled"
+                  ><i class="fas fa-hourglass-start"></i> Link Soon</a
+                >
+              </div>
+            </div>
+            <a href="#" class="btn-text-link"
+              >View All Scheduled Classes <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+
+          <div class="widget wide-widget" id="video-library">
+            <h3>Exclusive Video Library</h3>
+            <p class="widget-description">
+              Access your exclusive video tutorials and recorded sessions here.
+              New content is added regularly!
+            </p>
+            <div class="video-grid">
+              <div class="video-card">
+                <img
+                  src="https://via.placeholder.com/200x120/FF5733/FFF?text=Video+1"
+                  alt="Video Thumbnail"
+                />
+                <div class="video-info">
+                  <h4>Beginner: Understanding Support & Resistance</h4>
+                  <p>Length: 15:30</p>
+                  <a
+                    href="[Video Link 1]"
+                    target="_blank"
+                    class="btn-sm btn-watch"
+                    ><i class="fas fa-play"></i> Watch Now</a
+                  >
+                </div>
+              </div>
+              <div class="video-card">
+                <img
+                  src="https://via.placeholder.com/200x120/33FF57/FFF?text=Video+2"
+                  alt="Video Thumbnail"
+                />
+                <div class="video-info">
+                  <h4>Intermediate: Fibonacci Retracement Explained</h4>
+                  <p>Length: 22:10</p>
+                  <a
+                    href="[Video Link 2]"
+                    target="_blank"
+                    class="btn-sm btn-watch"
+                    ><i class="fas fa-play"></i> Watch Now</a
+                  >
+                </div>
+              </div>
+              <div class="video-card">
+                <img
+                  src="https://via.placeholder.com/200x120/3357FF/FFF?text=Video+3"
+                  alt="Video Thumbnail"
+                />
+                <div class="video-info">
+                  <h4>Advanced: Multi-Timeframe Analysis</h4>
+                  <p>Length: 30:00</p>
+                  <a
+                    href="[Video Link 3]"
+                    target="_blank"
+                    class="btn-sm btn-watch"
+                    ><i class="fas fa-play"></i> Watch Now</a
+                  >
+                </div>
+              </div>
+              <div class="video-card">
+                <img
+                  src="https://via.placeholder.com/200x120/FF33DA/FFF?text=Video+4"
+                  alt="Video Thumbnail"
+                />
+                <div class="video-info">
+                  <h4>Full Course: Market Psychology Deep Dive</h4>
+                  <p>Length: 45:00</p>
+                  <a
+                    href="[Video Link 4]"
+                    target="_blank"
+                    class="btn-sm btn-watch"
+                    ><i class="fas fa-play"></i> Watch Now</a
+                  >
+                </div>
+              </div>
+            </div>
+            <a href="#" class="btn-text-link"
+              >Browse All Videos <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+
+          <div class="widget wide-widget" id="my-assignments">
+            <h3>My Assignments</h3>
+            <p class="widget-description">
+              View your assigned tasks and submit your work here.
+            </p>
+            <div class="table-responsive">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Assignment Title</th>
+                    <th>Course Level</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Score</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Beginner Practice Quiz 1</td>
+                    <td>Beginner</td>
+                    <td>2025-06-10</td>
+                    <td><span class="status-badge pending">Pending</span></td>
+                    <td>- / 100</td>
+                    <td>
+                      <button class="btn-sm btn-action">
+                        <i class="fas fa-upload"></i> Submit
+                      </button>
+                      <button class="btn-sm btn-outline">
+                        <i class="fas fa-eye"></i> View Details
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Intermediate Case Study</td>
+                    <td>Intermediate</td>
+                    <td>2025-06-15</td>
+                    <td>
+                      <span class="status-badge submitted">Submitted</span>
+                    </td>
+                    <td>- / 50</td>
+                    <td>
+                      <button class="btn-sm btn-outline" disabled>
+                        <i class="fas fa-check"></i> Submitted
+                      </button>
+                      <button class="btn-sm btn-outline">
+                        <i class="fas fa-eye"></i> View Submission
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Advanced Trading Plan</td>
+                    <td>Advanced</td>
+                    <td>2025-06-20</td>
+                    <td><span class="status-badge graded">Graded</span></td>
+                    <td>92 / 100</td>
+                    <td>
+                      <button class="btn-sm btn-outline" disabled>
+                        <i class="fas fa-check"></i> Graded
+                      </button>
+                      <button class="btn-sm btn-outline">
+                        <i class="fas fa-eye"></i> View Feedback
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <a href="#" class="btn-text-link"
+              >View All Assignments <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+
+          <div class="widget wide-widget" id="my-certificates">
+            <h3>My Certificates</h3>
+            <p class="widget-description">
+              View and download certificates you have earned upon course
+              completion.
+            </p>
+            <div class="certificate-list">
+              <div class="certificate-item">
+                <i class="fas fa-award icon-lg"></i>
+                <div class="certificate-info">
+                  <h4>Certificate of Completion: Beginner Forex Trading</h4>
+                  <p>Issued: May 20, 2025</p>
+                </div>
+                <a
+                  href="[Link to Beginner Certificate PDF]"
+                  target="_blank"
+                  class="btn-sm btn-action"
+                  ><i class="fas fa-download"></i> Download</a
+                >
+              </div>
+              <div class="certificate-item">
+                <i class="fas fa-award icon-lg"></i>
+                <div class="certificate-info">
+                  <h4>
+                    Certificate of Completion: Intermediate Risk Management
+                  </h4>
+                  <p>Issued: May 22, 2025</p>
+                </div>
+                <a
+                  href="[Link to Intermediate Certificate PDF]"
+                  target="_blank"
+                  class="btn-sm btn-action"
+                  ><i class="fas fa-download"></i> Download</a
+                >
+              </div>
+              <div class="certificate-item disabled">
+                <i class="fas fa-hourglass-half icon-lg"></i>
+                <div class="certificate-info">
+                  <h4>Certificate: Advanced Trading Strategies</h4>
+                  <p>Status: Not Yet Earned</p>
+                </div>
+                <button class="btn-sm btn-outline" disabled>
+                  <i class="fas fa-lock"></i> Locked
+                </button>
+              </div>
+            </div>
+            <a href="#" class="btn-text-link"
+              >View All My Certificates <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+
+          <div class="widget single-widget">
+            <h3>Trading Journal Overview</h3>
+            <div class="journal-stats">
+              <div class="stat-item">
+                <span class="label">Total Trades:</span>
+                <span class="value">120</span>
+              </div>
+              <div class="stat-item">
+                <span class="label">Win Rate:</span>
+                <span class="value success">70%</span>
+              </div>
+              <div class="stat-item">
+                <span class="label">Profit Factor:</span>
+                <span class="value success">1.85</span>
+              </div>
+              <div class="stat-item">
+                <span class="label">Net P&L:</span>
+                <span class="value success">$1,500</span>
+              </div>
+            </div>
+            <a href="#" class="btn-outline">Go to Trading Journal</a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const themeToggle = document.getElementById("theme-toggle");
+        themeToggle.addEventListener("click", () => {
+          document.body.classList.toggle("dark");
+        });
+
+        const dashboardMenuToggle = document.querySelector(
+          ".menu-toggle-dashboard"
+        );
+        const sidebar = document.querySelector(".sidebar");
+        dashboardMenuToggle.addEventListener("click", () => {
+          sidebar.classList.toggle("active");
+          dashboardMenuToggle.classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+</html>
