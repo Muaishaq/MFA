@@ -1,2 +1,16 @@
 # MFA
-Muaishaq Forex Academy is a user-friendly online platform for learning forex trading. It includes a registration form with manual payment support, saves student data to Google Sheets via Apps Script, and sends confirmation emails using EmailJS. It also features course selection, discount logic, and a countdown timer for early registration.
+Muaishaq Forex Academy is a structured online learning platform built to simplify forex education for beginners and aspiring traders. The website features:
+
+📋 A detailed registration form for course enrollment
+
+🧾 Manual payment handling with user-uploaded proof
+
+📊 Student data automatically logged to Google Sheets via Apps Script
+
+📧 Email confirmations sent using EmailJS
+
+🎯 Early bird discount system and countdown logic
+
+💡 Courses: Beginner, Intermediate, Advanced, and Full Course options
+
+The system is designed for seamless, low-cost management without requiring a full backend.
